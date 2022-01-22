@@ -14,7 +14,7 @@ class Pregunta(
     override fun toString(): String {
         val gson = Gson()
 
-        return gson.toJson("Pregunta: $pregunta Respuestas: -$a        -$b        -$c        -$d")
+        return gson.toJson(this)
 
 
     }
