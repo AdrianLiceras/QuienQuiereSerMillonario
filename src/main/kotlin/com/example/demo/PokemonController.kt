@@ -41,6 +41,9 @@ class PokemonController {
             }
             i++
         }while (i<PreguntaRepository.listaPreguntas.size)
-        return mensaje
+
+        val gsonResp=Gson()
+
+        return gsonResp.toJson(mensaje)
     }
 }

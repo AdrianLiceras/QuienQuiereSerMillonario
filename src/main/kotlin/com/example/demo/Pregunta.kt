@@ -16,7 +16,6 @@ class Pregunta(
 
         return gson.toJson(this)
 
-
     }
 
 
