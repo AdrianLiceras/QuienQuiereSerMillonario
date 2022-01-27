@@ -5,6 +5,7 @@ import com.google.gson.JsonObject
 import com.google.gson.reflect.TypeToken
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
+import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RestController
 import kotlin.random.Random
 
@@ -33,17 +34,16 @@ class PokemonController {
 
                 if (PreguntaRepository.listaPreguntas[id].respuestaCorrecta.equals(respuesta, ignoreCase = true)) {
                     println("Respuesta Correcta")
-                    mensaje= gson.toJson("Respuesta Correcta")
+                    mensaje= "Respuesta Correcta"
                 } else {
                     println("Respuesta Incorrecta")
-                   mensaje= gson.toJson("Respuesta Incorrecta\n")
+                   mensaje="Respuesta Incorrecta"
                 }
             }
             i++
         }while (i<PreguntaRepository.listaPreguntas.size)
 
-        val gsonResp=Gson()
 
-        return gsonResp.toJson(mensaje)
+        return mensaje
     }
 }
